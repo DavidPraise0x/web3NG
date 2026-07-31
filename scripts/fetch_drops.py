@@ -2,7 +2,6 @@ import json
 import time
 import os
 
-# Comprehensive list of 30+ verified Nigerian Web3 projects
 EXTENDED_DROPS_DATA = [
     {
         "id": "nodepay-depin",
@@ -46,6 +45,26 @@ EXTENDED_DROPS_DATA = [
             "Keep extension active while browsing to stack daily OAI compute points."
         ],
         "offrampPath": "Solana Wallet -> Jupiter DEX -> NGN Bank Payout via Yellow Card"
+    },
+    {
+        "id": "bless-ai",
+        "title": "Bless AI Compute Network",
+        "sponsor": "Bless.network",
+        "category": "AI Web3 Tools",
+        "estimatedReward": "$40.00 - $190.00 Token Allocation",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://bless.network",
+        "claimsCount": "24.1k Nigerians",
+        "summary": "Shared compute network running AI inference tasks inside your browser.",
+        "whyNgBlocked": "Accessible directly across all Nigerian ISPs.",
+        "workaroundSteps": [
+            "Sign up on bless.network.",
+            "Run extension node to farm daily compute points."
+        ],
+        "offrampPath": "Solana / EVM DEX -> Yellow Card NGN Bank Deposit"
     },
     {
         "id": "paybox-usdc",
@@ -131,27 +150,6 @@ EXTENDED_DROPS_DATA = [
             "Claim daily streak EXP bonuses in dashboard."
         ],
         "offrampPath": "Solana Wallet -> Offramp via Yellow Card / Binance P2P"
-    },
-    {
-        "id": "perceptron-blockmesh",
-        "title": "Perceptron (BlockMesh AI Node)",
-        "sponsor": "Perceptron Network",
-        "category": "AI Web3 Tools",
-        "estimatedReward": "$35.00 - $160.00 Token Allocation",
-        "estimatedGas": "FREE",
-        "ngStatus": "NG_FRIENDLY",
-        "statusLabel": "🟢 100% NG Friendly & Pre-TGE",
-        "kycRequirement": "No KYC Required",
-        "verifiedLink": "https://perceptron.network",
-        "claimsCount": "19.5k Nigerians",
-        "summary": "Incentivized AI data contribution network (formerly BlockMesh). Farm node points for pre-TGE token allocation.",
-        "whyNgBlocked": "Fully open to Nigerian participants without VPN requirement.",
-        "workaroundSteps": [
-            "Sign up on official perceptron.network dashboard.",
-            "Connect Solana wallet and install browser extension.",
-            "Accumulate network activity points ahead of mainnet token generation event."
-        ],
-        "offrampPath": "Solana DEX -> Convert to NGN via Quidax / Yellow Card"
     },
     {
         "id": "pipe-network",
@@ -280,6 +278,27 @@ EXTENDED_DROPS_DATA = [
         "offrampPath": "Uniswap Mainnet -> Yellow Card / Quidax NGN Off-ramp"
     },
     {
+        "id": "humanity-protocol",
+        "title": "Humanity Protocol (Palm ID Testnet)",
+        "sponsor": "Humanity Foundation",
+        "category": "Testnets",
+        "estimatedReward": "$50.00 - $250.00 $H Token Pool",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "Palm Recognition via Mobile Phone",
+        "verifiedLink": "https://humanity.org",
+        "claimsCount": "29.7k Nigerians",
+        "summary": "Sybil-resistant proof of humanity protocol. Claim daily testnet $H tokens via smartphone palm scan.",
+        "whyNgBlocked": "Open for all global users.",
+        "workaroundSteps": [
+          "Download Humanity app on phone.",
+          "Perform palm recognition scan.",
+          "Claim daily testnet $H rewards."
+        ],
+        "offrampPath": "Swap on DEX -> Convert to NGN via Yellow Card"
+    },
+    {
         "id": "yellowcard-learn-earn",
         "title": "Yellow Card Academy Micro Learn & Earn",
         "sponsor": "Yellow Card Financial",
@@ -343,46 +362,46 @@ EXTENDED_DROPS_DATA = [
         "offrampPath": "Bybit P2P -> Instant NGN Deposit to GTB/Moniepoint/OPay"
     },
     {
-        "id": "coinbase-wallet-quests",
-        "title": "Coinbase Wallet Onchain Quests",
-        "sponsor": "Coinbase",
+        "id": "zealy-quests",
+        "title": "Zealy Micro Community Quests",
+        "sponsor": "Zealy.io",
         "category": "Learn & Earn",
-        "estimatedReward": "$12.00 - $30.00 USDC",
-        "estimatedGas": "$0.05",
-        "ngStatus": "WORKAROUND_NEEDED",
-        "statusLabel": "🟡 Self-Custody Wallet Workaround Ready",
-        "kycRequirement": "No KYC for Self-Custody Wallet",
-        "verifiedLink": "https://coinbase.com/wallet",
-        "claimsCount": "9.8k Nigerians",
-        "summary": "Complete micro on-chain swaps, NFT mints, and staking tasks inside Coinbase Self-Custody Wallet.",
-        "whyNgBlocked": "The main exchange app restricts some features for Nigeria, but Self-Custody Coinbase Wallet works!",
+        "estimatedReward": "$10.00 - $50.00 USDC / Tokens",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://zealy.io",
+        "claimsCount": "53.2k Nigerians",
+        "summary": "Complete community micro-tasks (X retweets, discord chat, quizzes) to earn USDC and project tokens.",
+        "whyNgBlocked": "Zero geo-blocking for Nigerian accounts.",
         "workaroundSteps": [
-            "Do NOT use main exchange app. Install Coinbase Self-Custody Wallet App.",
-            "Import your EVM seed phrase or create new self-custody wallet.",
-            "Navigate to 'Quests' tab in browser section and complete Base micro-tasks."
+          "Connect Metamask or Phantom to Zealy.",
+          "Join active project sprint boards.",
+          "Claim sprint rewards directly to wallet."
         ],
-        "offrampPath": "Send earned USDC directly to your NGN bank via Yellow Card / Bitmama API"
+        "offrampPath": "P2P / Yellow Card Bank Transfer"
     },
     {
-        "id": "galxe-passport-quests",
-        "title": "Galxe Web3 Passport & Quests",
-        "sponsor": "Galxe",
-        "category": "DeFi",
-        "estimatedReward": "$15.00 - $75.00 Token Pool",
-        "estimatedGas": "$0.03",
-        "ngStatus": "WORKAROUND_NEEDED",
-        "statusLabel": "🟡 NIN Verification Guide Available",
-        "kycRequirement": "NIN (National ID) Supported via Persona",
-        "verifiedLink": "https://galxe.com",
-        "claimsCount": "18.4k Nigerians",
-        "summary": "Verify Web3 identity via Galxe Passport to unlock exclusive drop campaigns and token mints.",
-        "whyNgBlocked": "Some Nigerian NIN cards without clear photo scans get auto-rejected by Persona.",
+        "id": "taskon-hub",
+        "title": "TaskOn Web3 Airdrop Hub",
+        "sponsor": "TaskOn",
+        "category": "Learn & Earn",
+        "estimatedReward": "$5.00 - $40.00 Tokens",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://taskon.xyz",
+        "claimsCount": "31.0k Nigerians",
+        "summary": "Multi-chain Web3 campaign platform paying instant token drops for completing Web3 micro-quests.",
+        "whyNgBlocked": "100% open for Nigeria.",
         "workaroundSteps": [
-            "Use clear PDF scan of NIN slip or plastic NIN card.",
-            "Ensure full legal name matches your Twitter/X account profile.",
-            "Mint Galxe Web3 ID on Polygon (low gas ~$0.02)."
+          "Login with Metamask or Phantom.",
+          "Complete daily verification tasks.",
+          "Claim airdrop NFTs and token rewards."
         ],
-        "offrampPath": "Claim quest reward tokens -> Swap on QuickSwap/Uniswap -> P2P NGN Bank Transfer"
+        "offrampPath": "Convert via DEX -> Yellow Card NGN Payout"
     }
 ]
 

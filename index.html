@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web3NG 🇳🇬 — Live Auto-Syncing Web3 Drops for Nigeria</title>
+  <title>Web3NG 🇳🇬 — Verified Web3 Drops That Pay Nigerians</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇳🇬</text></svg>" />
   
   <!-- Fonts -->
@@ -209,6 +209,26 @@
         offrampPath: "Solana Wallet -> Jupiter DEX -> NGN Bank Payout via Yellow Card"
       },
       {
+        id: "bless-ai",
+        title: "Bless AI Compute Network",
+        sponsor: "Bless.network",
+        category: "AI Web3 Tools",
+        estimatedReward: "$40.00 - $190.00 Token Allocation",
+        estimatedGas: "FREE",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://bless.network",
+        claimsCount: "24.1k Nigerians",
+        summary: "Shared compute network running AI inference tasks inside your browser.",
+        whyNgBlocked: "Accessible directly across all Nigerian ISPs.",
+        workaroundSteps: [
+          "Sign up on bless.network.",
+          "Run extension node to farm daily compute points."
+        ],
+        offrampPath: "Solana / EVM DEX -> Yellow Card NGN Bank Deposit"
+      },
+      {
         id: "pipe-network",
         title: "Pipe Network Decentralized CDN (Solana)",
         sponsor: "Pipe Network Labs",
@@ -272,25 +292,25 @@
         offrampPath: "Mainnet $IP -> Swap on Exchange -> Convert to NGN via Yellow Card"
       },
       {
-        id: "unichain-testnet",
-        title: "Unichain L2 Testnet (Uniswap Labs)",
-        sponsor: "Uniswap Foundation",
+        id: "humanity-protocol",
+        title: "Humanity Protocol (Palm ID Testnet)",
+        sponsor: "Humanity Foundation",
         category: "Testnets",
-        estimatedReward: "$40.00 - $200.00 Potential Drop",
-        estimatedGas: "FREE (Sepolia ETH)",
+        estimatedReward: "$50.00 - $250.00 $H Token Pool",
+        estimatedGas: "FREE",
         ngStatus: "NG_FRIENDLY",
         statusLabel: "🟢 100% NG Friendly",
-        kycRequirement: "No KYC Required",
-        verifiedLink: "https://unichain.org",
-        claimsCount: "18.3k Nigerians",
-        summary: "Uniswap's official L2 blockchain built on Optimism OP Stack. Execute testnet swaps and liquidity pools.",
-        whyNgBlocked: "Fully open with zero geo-blocks.",
+        kycRequirement: "Palm Recognition via Mobile Phone",
+        verifiedLink: "https://humanity.org",
+        claimsCount: "29.7k Nigerians",
+        summary: "Sybil-resistant proof of humanity protocol. Claim daily testnet $H tokens via smartphone palm scan.",
+        whyNgBlocked: "Open for all global users.",
         workaroundSteps: [
-          "Add Unichain Sepolia RPC to Metamask.",
-          "Bridge Sepolia ETH to Unichain Testnet.",
-          "Perform swaps and deploy testnet smart contracts."
+          "Download Humanity app on phone.",
+          "Perform palm recognition scan.",
+          "Claim daily testnet $H rewards."
         ],
-        offrampPath: "Uniswap Mainnet -> Yellow Card / Quidax NGN Off-ramp"
+        offrampPath: "Swap on DEX -> Convert to NGN via Yellow Card"
       },
       {
         id: "paybox-usdc",
@@ -315,27 +335,6 @@
         offrampPath: "Claim USDC on Base -> Bridge to YellowCard/Quidax -> Direct NGN Bank Transfer"
       },
       {
-        id: "grass-depin",
-        title: "Grass AI Network Epoch 7 Airdrop",
-        sponsor: "GetGrass.io",
-        category: "AI Web3 Tools",
-        estimatedReward: "$40.00 - $180.00 GRASS",
-        estimatedGas: "$0.005 (Solana)",
-        ngStatus: "NG_FRIENDLY",
-        statusLabel: "🟢 100% NG Friendly & Active",
-        kycRequirement: "No KYC (Email + Solana Wallet)",
-        verifiedLink: "https://app.getgrass.io",
-        claimsCount: "32.5k Nigerians",
-        summary: "Earn passive Web3 tokens by sharing unused internet bandwidth via lightweight node.",
-        whyNgBlocked: "Directly accessible from Nigeria without restrictions! Works on MTN/Airtel/Glo.",
-        workaroundSteps: [
-          "Sign up with email and install web extension or mobile node.",
-          "Connect any Solana wallet (Phantom / Solflare).",
-          "Keep node running during daily browsing to stack tier points."
-        ],
-        offrampPath: "Solana Wallet -> Sell GRASS on Bybit/Raydium -> Convert to NGN via Quidax/P2P"
-      },
-      {
         id: "yellowcard-learn-earn",
         title: "Yellow Card Academy Micro Learn & Earn",
         sponsor: "Yellow Card Financial",
@@ -350,9 +349,9 @@
         summary: "Complete short crypto safety quizzes on Yellow Card Academy to get direct Naira bank payouts.",
         whyNgBlocked: "Built specifically for Nigeria & Africa! Instant local bank payout.",
         workaroundSteps: [
-          "Register on Yellow Card app with NIN or BVN.",
-          "Go to Academy section and complete 5-minute crypto education quizzes.",
-          "Withdraw earned rewards directly to your Nigerian bank account."
+            "Register on Yellow Card app with NIN or BVN.",
+            "Go to Academy section and complete 5-minute crypto education quizzes.",
+            "Withdraw earned rewards directly to your Nigerian bank account."
         ],
         offrampPath: "Direct Instant Nigerian Bank Deposit (GTB, Zenith, Moniepoint, OPay)"
       }
@@ -367,7 +366,7 @@
               <span>•</span>
               <span style={{ color: 'var(--green)' }}>⚡ Base Gas: {LIVE_TICKER_DATA.gasPrices.base}</span>
               <span>•</span>
-              <span style={{ color: 'var(--cyan)' }}>Active NG Verified Drops: {dropCount}</span>
+              <span style={{ color: 'var(--cyan)' }}>Verified Drops: {dropCount}</span>
             </div>
             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
               <button onClick={onSync} style={{ background: 'var(--yellow)', border: '1px solid #000', borderRadius: '4px', padding: '2px 8px', fontSize: '0.75rem', fontWeight: '800', cursor: 'pointer' }}>
@@ -381,7 +380,7 @@
               <div style={{ backgroundColor: 'var(--green)', border: 'var(--border-thick)', boxShadow: 'var(--shadow-sm)', borderRadius: 'var(--radius-md)', padding: '8px 12px', fontFamily: 'var(--font-heading)', fontWeight: '900', fontSize: '1.4rem' }}>
                 Web3NG 🇳🇬
               </div>
-              <span className="badge-pop badge-pop-yellow">AUTO-UPDATING FEED ⚡</span>
+              <span className="badge-pop badge-pop-yellow">NO GAS WASTED ⚡</span>
             </div>
 
             <nav style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
@@ -437,7 +436,7 @@
         <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '24px 20px' }}>
           <div style={{ backgroundColor: 'var(--yellow)', border: 'var(--border-thick)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', padding: '32px 28px', marginBottom: '28px' }}>
             <span className="badge-pop badge-pop-purple" style={{ marginBottom: '12px' }}>AUTO-UPDATING FEED ⚡</span>
-            <h1 style={{ fontSize: '2.3rem', marginBottom: '12px' }}>{drops.length}+ Verified Web3 Drops that Pay Nigerians. 🇳🇬</h1>
+            <h1 style={{ fontSize: '2.4rem', marginBottom: '12px', color: 'var(--black)' }}>Verified Web3 Drops That Pay Nigerians 🇳🇬</h1>
             <p style={{ fontSize: '1.05rem', fontWeight: '600', marginBottom: '20px' }}>Constantly syncing emerging DePIN node drops, AI compute nodes, testnets, micro-tasks, and USDC rewards active on X.com & Web3 APIs.</p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <button className="btn-pop btn-pop-green" onClick={() => onSelectTab('inspector')}>Check Drop Link 🔍</button>
@@ -448,7 +447,7 @@
           <div style={{ backgroundColor: 'var(--bg-card)', border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '18px', marginBottom: '24px' }}>
             <input
               type="text"
-              placeholder={`Search ${drops.length}+ Web3 drops (e.g. Nodepay, Oasis, Pipe, PayBox, Grass, Story)...`}
+              placeholder={`Search verified drops (e.g. Nodepay, Oasis, Pipe, Bless, Story, Grass, Movement)...`}
               value={search}
               onChange={e => setSearch(e.target.value)}
               style={{ width: '100%', padding: '12px 14px', fontFamily: 'var(--font-body)', fontSize: '0.95rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', outline: 'none', marginBottom: '14px' }}
@@ -522,7 +521,7 @@
 
       useEffect(() => {
         handleAutoSync();
-        const timer = setInterval(() => handleAutoSync(), 30000); // auto-sync every 30s
+        const timer = setInterval(() => handleAutoSync(), 30000);
         return () => clearInterval(timer);
       }, []);
 
