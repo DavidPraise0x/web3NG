@@ -1,0 +1,218 @@
+:root {
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --black: #121212;
+  
+  --green: #00E676;
+  --green-light: #E8F5E9;
+  --yellow: #FFD600;
+  --yellow-light: #FFFDE7;
+  --purple: #7C4DFF;
+  --purple-light: #EDE7F6;
+  --coral: #FF3D00;
+  --coral-light: #FFEBEE;
+  --cyan: #00E5FF;
+  --cyan-light: #E0F7FA;
+  
+  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --border-thick: 3px solid #121212;
+  --border-thin: 2px solid #121212;
+  
+  --shadow-sm: 3px 3px 0px #121212;
+  --shadow-md: 5px 5px 0px #121212;
+  --shadow-lg: 8px 8px 0px #121212;
+  
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(#121212 0.75px, transparent 0.75px),
+    radial-gradient(#121212 0.75px, #FAF8F5 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Playful Neo-Brutalist Buttons */
+.btn-pop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--black);
+  background-color: var(--yellow);
+  border: var(--border-thick);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+}
+
+.btn-pop:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-pop:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-pop-green {
+  background-color: var(--green);
+}
+
+.btn-pop-purple {
+  background-color: var(--purple);
+  color: #FFFFFF;
+}
+
+.btn-pop-coral {
+  background-color: var(--coral);
+  color: #FFFFFF;
+}
+
+.btn-pop-cyan {
+  background-color: var(--cyan);
+}
+
+.btn-pop-outline {
+  background-color: var(--bg-card);
+}
+
+/* Playful Badges & Pills */
+.badge-pop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border: var(--border-thin);
+  border-radius: var(--radius-pill);
+  box-shadow: 2px 2px 0px var(--black);
+  background-color: var(--bg-card);
+}
+
+.badge-pop-green {
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.badge-pop-yellow {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.badge-pop-coral {
+  background-color: var(--coral);
+  color: #FFFFFF;
+}
+
+.badge-pop-purple {
+  background-color: var(--purple);
+  color: #FFFFFF;
+}
+
+/* Playful Neo-Brutalist Card Container */
+.card-pop {
+  background-color: var(--bg-card);
+  border: var(--border-thick);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-pop:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.modal-content {
+  background-color: var(--bg-card);
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+  border-left: var(--border-thin);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--purple);
+  border: var(--border-thin);
+  border-radius: var(--radius-pill);
+}
+
+/* Bouncy Keyframes */
+@keyframes bounceMini {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-bounce-mini {
+  animation: bounceMini 2s infinite ease-in-out;
+}

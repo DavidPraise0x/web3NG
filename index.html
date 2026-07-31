@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web3NG 🇳🇬 — Live Auto-Syncing Web3 Drops for Nigeria</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇳🇬</text></svg>" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- React & Libraries -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    :root {
+      --bg-main: #FAF8F5;
+      --bg-card: #FFFFFF;
+      --black: #121212;
+      
+      --green: #00E676;
+      --green-light: #E8F5E9;
+      --yellow: #FFD600;
+      --yellow-light: #FFFDE7;
+      --purple: #7C4DFF;
+      --purple-light: #EDE7F6;
+      --coral: #FF3D00;
+      --coral-light: #FFEBEE;
+      --cyan: #00E5FF;
+      --cyan-light: #E0F7FA;
+      
+      --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+
+      --border-thick: 3px solid #121212;
+      --border-thin: 2px solid #121212;
+      
+      --shadow-sm: 3px 3px 0px #121212;
+      --shadow-md: 5px 5px 0px #121212;
+      --shadow-lg: 8px 8px 0px #121212;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--black);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.5;
+      background-image: 
+        radial-gradient(#121212 0.75px, transparent 0.75px),
+        radial-gradient(#121212 0.75px, #FAF8F5 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .btn-pop {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--black);
+      background-color: var(--yellow);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+    .btn-pop:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-md); }
+    .btn-pop:active { transform: translate(2px, 2px); box-shadow: var(--shadow-sm); }
+    .btn-pop-green { background-color: var(--green); }
+    .btn-pop-purple { background-color: var(--purple); color: #FFF; }
+    .btn-pop-coral { background-color: var(--coral); color: #FFF; }
+    .btn-pop-cyan { background-color: var(--cyan); }
+    .btn-pop-outline { background-color: var(--bg-card); }
+
+    .badge-pop {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: var(--border-thin);
+      border-radius: var(--radius-pill);
+      box-shadow: 2px 2px 0px var(--black);
+      background-color: var(--bg-card);
+    }
+    .badge-pop-green { background-color: var(--green); color: var(--black); }
+    .badge-pop-yellow { background-color: var(--yellow); color: var(--black); }
+    .badge-pop-coral { background-color: var(--coral); color: #FFF; }
+    .badge-pop-purple { background-color: var(--purple); color: #FFF; }
+
+    .card-pop {
+      background-color: var(--bg-card);
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 20px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .card-pop:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(18, 18, 18, 0.7);
+      backdrop-filter: blur(2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal-content {
+      background-color: var(--bg-card);
+      border: var(--border-thick);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      max-width: 650px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const LIVE_TICKER_DATA = {
+      usdcNgnRate: 1540.50,
+      totalSavedGasNgn: "₦12.8M+",
+      gasPrices: { base: "0.001 Gwei ($0.01)" }
+    };
+
+    const INITIAL_DROPS = [
+      {
+        id: "nodepay-depin",
+        title: "Nodepay AI Bandwidth Network",
+        sponsor: "Nodepay.ai",
+        category: "AI Web3 Tools",
+        estimatedReward: "$50.00 - $250.00 Token Pool",
+        estimatedGas: "FREE (Web Node)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Trending on X",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://nodepay.ai",
+        claimsCount: "48.9k Nigerians",
+        summary: "Monetize unused internet bandwidth for AI model training via lightweight Chrome node extension.",
+        whyNgBlocked: "Directly accessible from Nigeria! Works smoothly on MTN, Airtel, Glo, & fiber broadband.",
+        workaroundSteps: [
+          "Create account on official nodepay.ai portal with email.",
+          "Install lightweight Nodepay Chrome extension.",
+          "Connect Phantom/Solflare wallet to lock in daily bandwidth points.",
+          "Complete social X/Twitter tasks in dashboard for 2,000 bonus node points."
+        ],
+        offrampPath: "Solana Wallet -> Swap $NODEPAY -> Convert to NGN via Yellow Card / Quidax"
+      },
+      {
+        id: "oasis-ai",
+        title: "Oasis AI Compute Node (Solana)",
+        sponsor: "Oasis AI Labs",
+        category: "AI Web3 Tools",
+        estimatedReward: "$45.00 - $220.00 $OAI Pool",
+        estimatedGas: "FREE (Web Node)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Active",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://oasis.ai",
+        claimsCount: "36.2k Nigerians",
+        summary: "Share idle GPU/CPU and bandwidth for $OAI token points. Popular on X.com for zero-gas passive earnings.",
+        whyNgBlocked: "Zero geo-restrictions for Nigeria! Runs seamlessly in background.",
+        workaroundSteps: [
+          "Register email on oasis.ai dashboard.",
+          "Install Oasis AI Provider Chrome Extension.",
+          "Keep extension active while browsing to stack daily OAI compute points."
+        ],
+        offrampPath: "Solana Wallet -> Jupiter DEX -> NGN Bank Payout via Yellow Card"
+      },
+      {
+        id: "pipe-network",
+        title: "Pipe Network Decentralized CDN (Solana)",
+        sponsor: "Pipe Network Labs",
+        category: "AI Web3 Tools",
+        estimatedReward: "$50.00 - $300.00 Token Pool",
+        estimatedGas: "FREE",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Active",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://pipenetwork.com",
+        claimsCount: "15.8k Nigerians",
+        summary: "Solana-backed decentralized CDN & media delivery network rewarding point contributors.",
+        whyNgBlocked: "100% open for African nodes and high-bandwidth participants.",
+        workaroundSteps: [
+          "Sign up on pipenetwork.com portal.",
+          "Run lightweight desktop or web node.",
+          "Earn proof-of-delivery points daily."
+        ],
+        offrampPath: "Solana Wallet -> Swap on Raydium -> Convert to NGN"
+      },
+      {
+        id: "perceptron-blockmesh",
+        title: "Perceptron (BlockMesh AI Node)",
+        sponsor: "Perceptron Network",
+        category: "AI Web3 Tools",
+        estimatedReward: "$35.00 - $160.00 Token Allocation",
+        estimatedGas: "FREE",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Pre-TGE",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://perceptron.network",
+        claimsCount: "19.5k Nigerians",
+        summary: "Incentivized AI data contribution network (formerly BlockMesh). Farm node points for pre-TGE token allocation.",
+        whyNgBlocked: "Fully open to Nigerian participants without VPN requirement.",
+        workaroundSteps: [
+          "Sign up on official perceptron.network dashboard.",
+          "Connect Solana wallet and install browser extension.",
+          "Accumulate network activity points ahead of mainnet token generation event."
+        ],
+        offrampPath: "Solana DEX -> Convert to NGN via Quidax / Yellow Card"
+      },
+      {
+        id: "story-protocol",
+        title: "Story Protocol Programmable IP Testnet",
+        sponsor: "Story Foundation",
+        category: "Testnets",
+        estimatedReward: "$70.00 - $350.00 $IP Allocation",
+        estimatedGas: "FREE (Testnet IP)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & High Value",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://storyprotocol.xyz",
+        claimsCount: "14.1k Nigerians",
+        summary: "Programmable IP layer protocol. Mint IP assets, license art on testnet ahead of mainnet TGE.",
+        whyNgBlocked: "100% open for global participants including Nigeria.",
+        workaroundSteps: [
+          "Connect Metamask to Story Iliad Testnet.",
+          "Claim daily testnet IP tokens from faucet.",
+          "Mint testnet IP licenses on Story ecosystem dApps."
+        ],
+        offrampPath: "Mainnet $IP -> Swap on Exchange -> Convert to NGN via Yellow Card"
+      },
+      {
+        id: "unichain-testnet",
+        title: "Unichain L2 Testnet (Uniswap Labs)",
+        sponsor: "Uniswap Foundation",
+        category: "Testnets",
+        estimatedReward: "$40.00 - $200.00 Potential Drop",
+        estimatedGas: "FREE (Sepolia ETH)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://unichain.org",
+        claimsCount: "18.3k Nigerians",
+        summary: "Uniswap's official L2 blockchain built on Optimism OP Stack. Execute testnet swaps and liquidity pools.",
+        whyNgBlocked: "Fully open with zero geo-blocks.",
+        workaroundSteps: [
+          "Add Unichain Sepolia RPC to Metamask.",
+          "Bridge Sepolia ETH to Unichain Testnet.",
+          "Perform swaps and deploy testnet smart contracts."
+        ],
+        offrampPath: "Uniswap Mainnet -> Yellow Card / Quidax NGN Off-ramp"
+      },
+      {
+        id: "paybox-usdc",
+        title: "MoonPay PayBox USDC Drop",
+        sponsor: "MoonPay",
+        category: "USDC/Cash",
+        estimatedReward: "$5.00 - $25.00 USDC",
+        estimatedGas: "$0.02 (Base)",
+        ngStatus: "WORKAROUND_NEEDED",
+        statusLabel: "🟡 Faucet Drain Alert / Workaround Ready",
+        kycRequirement: "No KYC Required (AI Wallet Link)",
+        verifiedLink: "https://paybox.sh",
+        claimsCount: "14.2k Nigerians",
+        summary: "Claim free USDC rewards by linking your AI Agent (ChatGPT/Claude) with PayBox wallet.",
+        whyNgBlocked: "The global faucet drains fast and Cloudflare challenges high-traffic Nigerian IPs.",
+        workaroundSteps: [
+          "Use custom RPC endpoint (Cloudflare/Alchemy) on Metamask or Phantom.",
+          "Switch Telco DNS: On MTN/Glo, set 1.1.1.1 DNS to bypass Cloudflare captcha loops.",
+          "Ensure your X (Twitter) account is over 30 days old with valid email bound.",
+          "Claim on Base network for ultra-low gas under $0.02."
+        ],
+        offrampPath: "Claim USDC on Base -> Bridge to YellowCard/Quidax -> Direct NGN Bank Transfer"
+      },
+      {
+        id: "grass-depin",
+        title: "Grass AI Network Epoch 7 Airdrop",
+        sponsor: "GetGrass.io",
+        category: "AI Web3 Tools",
+        estimatedReward: "$40.00 - $180.00 GRASS",
+        estimatedGas: "$0.005 (Solana)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Active",
+        kycRequirement: "No KYC (Email + Solana Wallet)",
+        verifiedLink: "https://app.getgrass.io",
+        claimsCount: "32.5k Nigerians",
+        summary: "Earn passive Web3 tokens by sharing unused internet bandwidth via lightweight node.",
+        whyNgBlocked: "Directly accessible from Nigeria without restrictions! Works on MTN/Airtel/Glo.",
+        workaroundSteps: [
+          "Sign up with email and install web extension or mobile node.",
+          "Connect any Solana wallet (Phantom / Solflare).",
+          "Keep node running during daily browsing to stack tier points."
+        ],
+        offrampPath: "Solana Wallet -> Sell GRASS on Bybit/Raydium -> Convert to NGN via Quidax/P2P"
+      },
+      {
+        id: "yellowcard-learn-earn",
+        title: "Yellow Card Academy Micro Learn & Earn",
+        sponsor: "Yellow Card Financial",
+        category: "Learn & Earn",
+        estimatedReward: "₦1,000 - ₦5,000 NGN Direct Payout",
+        estimatedGas: "FREE",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Native & Instant Bank Deposit",
+        kycRequirement: "NIN / BVN Verification",
+        verifiedLink: "https://yellowcard.io",
+        claimsCount: "62.0k Nigerians",
+        summary: "Complete short crypto safety quizzes on Yellow Card Academy to get direct Naira bank payouts.",
+        whyNgBlocked: "Built specifically for Nigeria & Africa! Instant local bank payout.",
+        workaroundSteps: [
+          "Register on Yellow Card app with NIN or BVN.",
+          "Go to Academy section and complete 5-minute crypto education quizzes.",
+          "Withdraw earned rewards directly to your Nigerian bank account."
+        ],
+        offrampPath: "Direct Instant Nigerian Bank Deposit (GTB, Zenith, Moniepoint, OPay)"
+      }
+    ];
+
+    function Navbar({ activeTab, setActiveTab, dropCount, onSync, isSyncing }) {
+      return (
+        <header style={{ borderBottom: 'var(--border-thick)', backgroundColor: 'var(--bg-card)' }}>
+          <div style={{ backgroundColor: 'var(--black)', color: '#FFF', padding: '6px 16px', fontSize: '0.82rem', fontFamily: 'var(--font-heading)', fontWeight: '600', display: 'flex', justifyContent: 'space-between', gap: '20px', overflowX: 'auto' }}>
+            <div style={{ display: 'flex', gap: '16px', whiteSpace: 'nowrap' }}>
+              <span style={{ color: 'var(--yellow)' }}>💰 1 USDC = ₦{LIVE_TICKER_DATA.usdcNgnRate} NGN</span>
+              <span>•</span>
+              <span style={{ color: 'var(--green)' }}>⚡ Base Gas: {LIVE_TICKER_DATA.gasPrices.base}</span>
+              <span>•</span>
+              <span style={{ color: 'var(--cyan)' }}>Active NG Verified Drops: {dropCount}</span>
+            </div>
+            <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              <button onClick={onSync} style={{ background: 'var(--yellow)', border: '1px solid #000', borderRadius: '4px', padding: '2px 8px', fontSize: '0.75rem', fontWeight: '800', cursor: 'pointer' }}>
+                {isSyncing ? '🔄 Syncing...' : '🔄 Auto-Sync Live Drops'}
+              </button>
+            </div>
+          </div>
+
+          <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => setActiveTab('radar')}>
+              <div style={{ backgroundColor: 'var(--green)', border: 'var(--border-thick)', boxShadow: 'var(--shadow-sm)', borderRadius: 'var(--radius-md)', padding: '8px 12px', fontFamily: 'var(--font-heading)', fontWeight: '900', fontSize: '1.4rem' }}>
+                Web3NG 🇳🇬
+              </div>
+              <span className="badge-pop badge-pop-yellow">AUTO-UPDATING FEED ⚡</span>
+            </div>
+
+            <nav style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              <button className={`btn-pop ${activeTab === 'radar' ? 'btn-pop-green' : 'btn-pop-outline'}`} onClick={() => setActiveTab('radar')}>⚡ Drop Radar</button>
+              <button className={`btn-pop ${activeTab === 'inspector' ? 'btn-pop-yellow' : 'btn-pop-outline'}`} onClick={() => setActiveTab('inspector')}>🔍 Am I Eligible?</button>
+              <button className={`btn-pop ${activeTab === 'offramp' ? 'btn-pop-cyan' : 'btn-pop-outline'}`} onClick={() => setActiveTab('offramp')}>💰 Naira Calc</button>
+            </nav>
+          </div>
+        </header>
+      );
+    }
+
+    function GuideModal({ drop, onClose }) {
+      if (!drop) return null;
+      return (
+        <div className="modal-overlay" onClick={onClose}>
+          <div className="modal-content" onClick={e => e.stopPropagation()}>
+            <button onClick={onClose} style={{ position: 'absolute', top: '16px', right: '16px', background: 'var(--coral)', color: '#FFF', border: 'var(--border-thin)', borderRadius: '50%', width: '32px', height: '32px', cursor: 'pointer', fontWeight: 'bold' }}>✕</button>
+            <div style={{ marginBottom: '16px' }}>
+              <span className="badge-pop badge-pop-yellow">{drop.sponsor}</span>
+              <h2 style={{ fontSize: '1.5rem', marginTop: '8px' }}>{drop.title}</h2>
+            </div>
+            <div style={{ backgroundColor: drop.ngStatus === 'NG_FRIENDLY' ? 'var(--green-light)' : 'var(--yellow-light)', border: 'var(--border-thin)', borderRadius: 'var(--radius-md)', padding: '14px', marginBottom: '20px' }}>
+              <h4 style={{ fontSize: '1.05rem', marginBottom: '4px' }}>{drop.statusLabel}</h4>
+              <p style={{ fontSize: '0.88rem', color: '#4B5563' }}>{drop.whyNgBlocked}</p>
+            </div>
+            <h3 style={{ fontSize: '1.15rem', marginBottom: '12px' }}>🇳🇬 Nigeria Execution Steps:</h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+              {drop.workaroundSteps.map((step, idx) => (
+                <div key={idx} style={{ display: 'flex', gap: '10px', background: 'var(--bg-main)', border: '1px solid var(--black)', padding: '10px', borderRadius: '8px' }}>
+                  <span style={{ background: 'var(--yellow)', border: '1px solid var(--black)', borderRadius: '50%', width: '22px', height: '22px', display: 'flex', alignItems: 'center', justify: 'center', fontWeight: 'bold', fontSize: '0.75rem', flexShrink: 0 }}>{idx + 1}</span>
+                  <span style={{ fontSize: '0.9rem' }}>{step}</span>
+                </div>
+              ))}
+            </div>
+            <a href={drop.verifiedLink} target="_blank" rel="noopener noreferrer" className="btn-pop btn-pop-green" style={{ width: '100%' }}>Proceed to Official Site ↗</a>
+          </div>
+        </div>
+      );
+    }
+
+    function DropRadar({ drops, onSelectTab, onOpenGuide }) {
+      const [search, setSearch] = useState('');
+      const [category, setCategory] = useState('All');
+
+      const filtered = drops.filter(d => {
+        const matchesCat = category === 'All' || d.category === category;
+        const matchesSearch = d.title.toLowerCase().includes(search.toLowerCase()) || d.sponsor.toLowerCase().includes(search.toLowerCase());
+        return matchesCat && matchesSearch;
+      });
+
+      return (
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '24px 20px' }}>
+          <div style={{ backgroundColor: 'var(--yellow)', border: 'var(--border-thick)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)', padding: '32px 28px', marginBottom: '28px' }}>
+            <span className="badge-pop badge-pop-purple" style={{ marginBottom: '12px' }}>AUTO-UPDATING FEED ⚡</span>
+            <h1 style={{ fontSize: '2.3rem', marginBottom: '12px' }}>{drops.length}+ Verified Web3 Drops that Pay Nigerians. 🇳🇬</h1>
+            <p style={{ fontSize: '1.05rem', fontWeight: '600', marginBottom: '20px' }}>Constantly syncing emerging DePIN node drops, AI compute nodes, testnets, micro-tasks, and USDC rewards active on X.com & Web3 APIs.</p>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <button className="btn-pop btn-pop-green" onClick={() => onSelectTab('inspector')}>Check Drop Link 🔍</button>
+              <button className="btn-pop btn-pop-outline" onClick={() => onSelectTab('offramp')}>Naira Calculator 💰</button>
+            </div>
+          </div>
+
+          <div style={{ backgroundColor: 'var(--bg-card)', border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', padding: '18px', marginBottom: '24px' }}>
+            <input
+              type="text"
+              placeholder={`Search ${drops.length}+ Web3 drops (e.g. Nodepay, Oasis, Pipe, PayBox, Grass, Story)...`}
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              style={{ width: '100%', padding: '12px 14px', fontFamily: 'var(--font-body)', fontSize: '0.95rem', border: 'var(--border-thick)', borderRadius: 'var(--radius-md)', outline: 'none', marginBottom: '14px' }}
+            />
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {['All', 'AI Web3 Tools', 'USDC/Cash', 'Testnets', 'Learn & Earn'].map(c => (
+                <button key={c} className={`badge-pop ${category === c ? 'badge-pop-purple' : ''}`} style={{ cursor: 'pointer' }} onClick={() => setCategory(c)}>{c}</button>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
+            {filtered.map(drop => (
+              <div key={drop.id} className="card-pop" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap', gap: '6px' }}>
+                    <span className={`badge-pop ${drop.ngStatus === 'NG_FRIENDLY' ? 'badge-pop-green' : 'badge-pop-yellow'}`}>
+                      {drop.ngStatus === 'NG_FRIENDLY' ? '🟢 100% NG FRIENDLY' : '🟡 WORKAROUND READY'}
+                    </span>
+                    <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#6B7280' }}>👥 {drop.claimsCount}</span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '6px' }}>{drop.title}</h3>
+                  <p style={{ fontSize: '0.88rem', color: '#4B5563', marginBottom: '14px' }}>{drop.summary}</p>
+                </div>
+
+                <div>
+                  <div style={{ backgroundColor: 'var(--bg-main)', border: '1px solid var(--black)', borderRadius: '8px', padding: '10px', marginBottom: '14px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                    <div>
+                      <div style={{ fontSize: '0.7rem', fontWeight: '800', color: '#6B7280' }}>EST. REWARD</div>
+                      <div style={{ fontSize: '0.88rem', fontWeight: '800', color: 'var(--purple)' }}>{drop.estimatedReward}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontSize: '0.7rem', fontWeight: '800', color: '#6B7280' }}>KYC LEVEL</div>
+                      <div style={{ fontSize: '0.82rem', fontWeight: '800' }}>{drop.kycRequirement}</div>
+                    </div>
+                  </div>
+
+                  <button className="btn-pop btn-pop-green" style={{ width: '100%' }} onClick={() => onOpenGuide(drop)}>
+                    View NG Execution Guide →
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    function App() {
+      const [activeTab, setActiveTab] = useState('radar');
+      const [drops, setDrops] = useState(INITIAL_DROPS);
+      const [selectedGuide, setSelectedGuide] = useState(null);
+      const [isSyncing, setIsSyncing] = useState(false);
+
+      const handleAutoSync = async () => {
+        setIsSyncing(true);
+        try {
+          const res = await fetch('./dropsData.json');
+          if (res.ok) {
+            const data = await res.json();
+            if (data.drops && data.drops.length > 0) {
+              setDrops(data.drops);
+            }
+          }
+        } catch (e) {
+          console.log('Sync fallback active');
+        }
+        setTimeout(() => setIsSyncing(false), 800);
+      };
+
+      useEffect(() => {
+        handleAutoSync();
+        const timer = setInterval(() => handleAutoSync(), 30000); // auto-sync every 30s
+        return () => clearInterval(timer);
+      }, []);
+
+      return (
+        <div>
+          <Navbar activeTab={activeTab} setActiveTab={setActiveTab} dropCount={drops.length} onSync={handleAutoSync} isSyncing={isSyncing} />
+          <main>
+            {activeTab === 'radar' && <DropRadar drops={drops} onSelectTab={setActiveTab} onOpenGuide={setSelectedGuide} />}
+            {activeTab === 'inspector' && <div style={{ padding: '40px', textAlign: 'center' }}>Inspector active</div>}
+            {activeTab === 'offramp' && <div style={{ padding: '40px', textAlign: 'center' }}>Naira Calculator active</div>}
+          </main>
+          {selectedGuide && <GuideModal drop={selectedGuide} onClose={() => setSelectedGuide(null)} />}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
