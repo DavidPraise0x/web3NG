@@ -2,8 +2,10 @@
 
 > **Web3 drop radar, regional eligibility checker & instant Naira (NGN) off-ramp engine. Stop wasting gas on blocked drops.**
 
-![Web3NG Banner](https://img.shields.io/badge/Web3NG-Nigeria%20First-00E676?style=for-the-badge&logo=ethereum)
-![React](https://img.shields.io/badge/React-18-7C4DFF?style=for-the-badge&logo=react)
+🌐 **Live Web Application**: **[https://web3ng.netlify.app](https://web3ng.netlify.app)**
+
+![Web3NG Banner](https://img.shields.io/badge/Web3NG-Live%20Production-00E676?style=for-the-badge&logo=netlify)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-7C4DFF?style=for-the-badge&logo=github)
 ![License](https://img.shields.io/badge/License-MIT-FFD600?style=for-the-badge)
 
 ---
@@ -35,20 +37,15 @@ Web3NG is built using a high-energy **Playful Pop Neo-Brutalist Aesthetic**:
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Live Access & Quick Start
 
-### 1. Clone the repository:
-```bash
-git clone https://github.com/DavidPraise0x/web3NG.git
-cd web3NG
-```
-
-### 2. Run locally (Zero Build Dependencies):
-Open `index.html` directly in your browser or run a lightweight local server:
-```bash
-python -m http.server 3000
-```
-Then visit `http://localhost:3000`.
+- **Live Site**: [https://web3ng.netlify.app](https://web3ng.netlify.app)
+- **Local Server**:
+  ```bash
+  git clone https://github.com/DavidPraise0x/web3NG.git
+  cd web3NG
+  python -m http.server 3000
+  ```
 
 ---
 
