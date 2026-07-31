@@ -165,6 +165,29 @@ EXTENDED_DROPS_DATA = [
         "offrampPath": "Solana Wallet -> Swap on Raydium -> Convert to NGN"
     },
     {
+        "id": "perceptron-blockmesh",
+        "title": "Perceptron (BlockMesh AI Node)",
+        "sponsor": "Perceptron Network",
+        "category": "AI Web3 Tools",
+        "estimatedReward": "$35.00 - $160.00 Token Allocation",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly & Pre-TGE",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://perceptron.network",
+        "claimsCount": "19.5k Nigerians",
+        "logoUrl": "https://perceptron.network/favicon.ico",
+        "brandColor": "#7C4DFF",
+        "summary": "Incentivized AI data contribution network (formerly BlockMesh). Farm node points for pre-TGE token allocation.",
+        "whyNgBlocked": "Fully open to Nigerian participants without VPN requirement.",
+        "workaroundSteps": [
+            "Sign up on official perceptron.network dashboard.",
+            "Connect Solana wallet and install browser extension.",
+            "Accumulate network activity points ahead of mainnet token generation event."
+        ],
+        "offrampPath": "Solana DEX -> Convert to NGN via Quidax / Yellow Card"
+    },
+    {
         "id": "movement-labs",
         "title": "Movement Labs (The Parthenon Testnet)",
         "sponsor": "Movement Labs",
@@ -255,7 +278,7 @@ EXTENDED_DROPS_DATA = [
           "Mint testnet IP licenses on Story ecosystem dApps."
         ],
         "offrampPath": "Mainnet $IP -> Swap on Exchange -> Convert to NGN via Yellow Card"
-      },
+    },
     {
         "id": "unichain-testnet",
         "title": "Unichain L2 Testnet (Uniswap Labs)",
@@ -278,7 +301,7 @@ EXTENDED_DROPS_DATA = [
           "Perform swaps and deploy testnet smart contracts."
         ],
         "offrampPath": "Uniswap Mainnet -> Yellow Card / Quidax NGN Off-ramp"
-      },
+    },
     {
         "id": "humanity-protocol",
         "title": "Humanity Protocol (Palm ID Testnet)",
@@ -301,7 +324,51 @@ EXTENDED_DROPS_DATA = [
           "Claim daily testnet $H rewards."
         ],
         "offrampPath": "Swap on DEX -> Convert to NGN via Yellow Card"
-      },
+    },
+    {
+        "id": "sentient-ai",
+        "title": "Sentient AI Network Testnet",
+        "sponsor": "Sentient Foundation",
+        "category": "AI Web3 Tools",
+        "estimatedReward": "$45.00 - $210.00 Token Allocation",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://sentient.xyz",
+        "claimsCount": "13.4k Nigerians",
+        "logoUrl": "https://sentient.xyz/favicon.ico",
+        "brandColor": "#00E5FF",
+        "summary": "Decentralized open-source AI platform testnet for developer AI models.",
+        "whyNgBlocked": "Open globally.",
+        "workaroundSteps": [
+          "Connect wallet to Sentient testnet.",
+          "Complete community tasks on testnet."
+        ],
+        "offrampPath": "Swap on DEX -> NGN Offramp"
+    },
+    {
+        "id": "sonic-labs",
+        "title": "Sonic SVVM Testnet (Fantom Sonic)",
+        "sponsor": "Sonic Labs",
+        "category": "Testnets",
+        "estimatedReward": "$60.00 - $280.00 $S Token Pool",
+        "estimatedGas": "FREE",
+        "ngStatus": "NG_FRIENDLY",
+        "statusLabel": "🟢 100% NG Friendly",
+        "kycRequirement": "No KYC Required",
+        "verifiedLink": "https://soniclabs.com",
+        "claimsCount": "17.9k Nigerians",
+        "logoUrl": "https://soniclabs.com/favicon.ico",
+        "brandColor": "#FFD600",
+        "summary": "Ultra-fast EVM Layer 1 testnet by Fantom team. Interact with Arcade testnet for points.",
+        "whyNgBlocked": "No IP blocks.",
+        "workaroundSteps": [
+          "Add Sonic testnet RPC to Metamask.",
+          "Drip testnet S tokens and execute swaps."
+        ],
+        "offrampPath": "Exchange Spot -> NGN P2P"
+    },
     {
         "id": "yellowcard-learn-earn",
         "title": "Yellow Card Academy Micro Learn & Earn",
@@ -372,6 +439,52 @@ EXTENDED_DROPS_DATA = [
         "offrampPath": "Bybit P2P -> Instant NGN Deposit to GTB/Moniepoint/OPay"
     },
     {
+        "id": "coinbase-wallet-quests",
+        "title": "Coinbase Wallet Onchain Quests",
+        "sponsor": "Coinbase",
+        "category": "Learn & Earn",
+        "estimatedReward": "$12.00 - $30.00 USDC",
+        "estimatedGas": "$0.05",
+        "ngStatus": "WORKAROUND_NEEDED",
+        "statusLabel": "🟡 Self-Custody Wallet Workaround Ready",
+        "kycRequirement": "No KYC for Self-Custody Wallet",
+        "verifiedLink": "https://coinbase.com/wallet",
+        "claimsCount": "9.8k Nigerians",
+        "logoUrl": "https://coinbase.com/favicon.ico",
+        "brandColor": "#00E5FF",
+        "summary": "Complete micro on-chain swaps, NFT mints, and staking tasks inside Coinbase Self-Custody Wallet.",
+        "whyNgBlocked": "The main exchange app restricts some features for Nigeria, but Self-Custody Coinbase Wallet works!",
+        "workaroundSteps": [
+            "Do NOT use main exchange app. Install Coinbase Self-Custody Wallet App.",
+            "Import your EVM seed phrase or create new self-custody wallet.",
+            "Navigate to 'Quests' tab in browser section and complete Base micro-tasks."
+        ],
+        "offrampPath": "Send earned USDC directly to your NGN bank via Yellow Card / Bitmama API"
+    },
+    {
+        "id": "galxe-passport-quests",
+        "title": "Galxe Web3 Passport & Quests",
+        "sponsor": "Galxe",
+        "category": "Learn & Earn",
+        "estimatedReward": "$15.00 - $75.00 Token Pool",
+        "estimatedGas": "$0.03",
+        "ngStatus": "WORKAROUND_NEEDED",
+        "statusLabel": "🟡 NIN Verification Guide Available",
+        "kycRequirement": "NIN (National ID) Supported via Persona",
+        "verifiedLink": "https://galxe.com",
+        "claimsCount": "18.4k Nigerians",
+        "logoUrl": "https://galxe.com/favicon.ico",
+        "brandColor": "#7C4DFF",
+        "summary": "Verify Web3 identity via Galxe Passport to unlock exclusive drop campaigns and token mints.",
+        "whyNgBlocked": "Some Nigerian NIN cards without clear photo scans get auto-rejected by Persona.",
+        "workaroundSteps": [
+            "Use clear PDF scan of NIN slip or plastic NIN card.",
+            "Ensure full legal name matches your Twitter/X account profile.",
+            "Mint Galxe Web3 ID on Polygon (low gas ~$0.02)."
+        ],
+        "offrampPath": "Claim quest reward tokens -> Swap on QuickSwap/Uniswap -> P2P NGN Bank Transfer"
+    },
+    {
         "id": "zealy-quests",
         "title": "Zealy Micro Community Quests",
         "sponsor": "Zealy.io",
@@ -427,7 +540,7 @@ def update_json_database():
             "totalDrops": len(EXTENDED_DROPS_DATA),
             "drops": EXTENDED_DROPS_DATA
         }, f, indent=2)
-    print(f"[SUCCESS] Updated dropsData.json without paybox and with official project domain logos!")
+    print(f"[SUCCESS] Updated dropsData.json with all {len(EXTENDED_DROPS_DATA)} verified Nigerian Web3 projects!")
 
 if __name__ == "__main__":
     update_json_database()
