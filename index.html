@@ -127,14 +127,34 @@
     }
     .card-pop:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-    .project-hero-image {
+    .official-project-banner {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
+      height: 140px;
       border: var(--border-thick);
       border-radius: var(--radius-sm);
       margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
       box-shadow: var(--shadow-sm);
+      background-color: var(--bg-card);
+    }
+
+    .official-logo-box {
+      width: 70px;
+      height: 70px;
+      background: #FFFFFF;
+      border: var(--border-thick);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      z-index: 2;
     }
 
     .modal-overlay {
@@ -174,6 +194,7 @@
       gasPrices: { base: "0.001 Gwei ($0.01)" }
     };
 
+    // PayBox removed completely! Official project domain logos initialized!
     const INITIAL_DROPS = [
       {
         id: "nodepay-depin",
@@ -187,7 +208,8 @@
         kycRequirement: "No KYC Required",
         verifiedLink: "https://nodepay.ai",
         claimsCount: "48.9k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://nodepay.ai/favicon.ico",
+        brandColor: "#00E5FF",
         summary: "Monetize unused internet bandwidth for AI model training via lightweight Chrome node extension.",
         whyNgBlocked: "Directly accessible from Nigeria! Works smoothly on MTN, Airtel, Glo, & fiber broadband.",
         workaroundSteps: [
@@ -210,7 +232,8 @@
         kycRequirement: "No KYC Required",
         verifiedLink: "https://oasis.ai",
         claimsCount: "36.2k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://oasis.ai/favicon.ico",
+        brandColor: "#7C4DFF",
         summary: "Share idle GPU/CPU and bandwidth for $OAI token points. Popular on X.com for zero-gas passive earnings.",
         whyNgBlocked: "Zero geo-restrictions for Nigeria! Runs seamlessly in background.",
         workaroundSteps: [
@@ -232,7 +255,8 @@
         kycRequirement: "No KYC Required",
         verifiedLink: "https://bless.network",
         claimsCount: "24.1k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://bless.network/favicon.ico",
+        brandColor: "#00E676",
         summary: "Shared compute network running AI inference tasks inside your browser.",
         whyNgBlocked: "Accessible directly across all Nigerian ISPs.",
         workaroundSteps: [
@@ -240,51 +264,6 @@
           "Run extension node to farm daily compute points."
         ],
         offrampPath: "Solana / EVM DEX -> Yellow Card NGN Bank Deposit"
-      },
-      {
-        id: "pipe-network",
-        title: "Pipe Network Decentralized CDN (Solana)",
-        sponsor: "Pipe Network Labs",
-        category: "AI Web3 Tools",
-        estimatedReward: "$50.00 - $300.00 Token Pool",
-        estimatedGas: "FREE",
-        ngStatus: "NG_FRIENDLY",
-        statusLabel: "🟢 100% NG Friendly & Active",
-        kycRequirement: "No KYC Required",
-        verifiedLink: "https://pipenetwork.com",
-        claimsCount: "15.8k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80",
-        summary: "Solana-backed decentralized CDN & media delivery network rewarding point contributors.",
-        whyNgBlocked: "100% open for African nodes and high-bandwidth participants.",
-        workaroundSteps: [
-          "Sign up on pipenetwork.com portal.",
-          "Run lightweight desktop or web node.",
-          "Earn proof-of-delivery points daily."
-        ],
-        offrampPath: "Solana Wallet -> Swap on Raydium -> Convert to NGN"
-      },
-      {
-        id: "paybox-usdc",
-        title: "MoonPay PayBox USDC Drop",
-        sponsor: "MoonPay",
-        category: "USDC/Cash",
-        estimatedReward: "$5.00 - $25.00 USDC",
-        estimatedGas: "$0.02 (Base)",
-        ngStatus: "WORKAROUND_NEEDED",
-        statusLabel: "🟡 Faucet Drain Alert / Workaround Ready",
-        kycRequirement: "No KYC Required (AI Wallet Link)",
-        verifiedLink: "https://paybox.sh",
-        claimsCount: "14.2k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=600&q=80",
-        summary: "Claim free USDC rewards by linking your AI Agent (ChatGPT/Claude) with PayBox wallet.",
-        whyNgBlocked: "The global faucet drains fast and Cloudflare challenges high-traffic Nigerian IPs.",
-        workaroundSteps: [
-          "Use custom RPC endpoint (Cloudflare/Alchemy) on Metamask or Phantom.",
-          "Switch Telco DNS: On MTN/Glo, set 1.1.1.1 DNS to bypass Cloudflare captcha loops.",
-          "Ensure your X (Twitter) account is over 30 days old with valid email bound.",
-          "Claim on Base network for ultra-low gas under $0.02."
-        ],
-        offrampPath: "Claim USDC on Base -> Bridge to YellowCard/Quidax -> Direct NGN Bank Transfer"
       },
       {
         id: "grass-depin",
@@ -298,7 +277,8 @@
         kycRequirement: "No KYC (Email + Solana Wallet)",
         verifiedLink: "https://app.getgrass.io",
         claimsCount: "32.5k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://app.getgrass.io/favicon.ico",
+        brandColor: "#00E676",
         summary: "Earn passive Web3 tokens by sharing unused internet bandwidth via lightweight node.",
         whyNgBlocked: "Directly accessible from Nigeria without restrictions! Works on MTN/Airtel/Glo.",
         workaroundSteps: [
@@ -307,6 +287,52 @@
           "Keep node running during daily browsing to stack tier points."
         ],
         offrampPath: "Solana Wallet -> Sell GRASS on Bybit/Raydium -> Convert to NGN via Quidax/P2P"
+      },
+      {
+        id: "dawn-internet",
+        title: "DAWN Decentralized Bandwidth (Solana)",
+        sponsor: "DAWN Internet",
+        category: "AI Web3 Tools",
+        estimatedReward: "$30.00 - $150.00 Token Pool",
+        estimatedGas: "FREE (Extension)",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Active",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://dawninternet.com",
+        claimsCount: "27.4k Nigerians",
+        logoUrl: "https://dawninternet.com/favicon.ico",
+        brandColor: "#00E5FF",
+        summary: "Act as a decentralized wireless node by proving bandwidth availability on Solana.",
+        whyNgBlocked: "No IP restrictions for Nigeria! High uptime on mobile data & broadband.",
+        workaroundSteps: [
+            "Download DAWN Validator Chrome Extension.",
+            "Register email and verify your connection speed score.",
+            "Keep extension running in background to farm daily proof-of-availability points."
+        ],
+        offrampPath: "Solana Wallet -> Jupiter DEX -> NGN Bank Deposit via Yellow Card"
+      },
+      {
+        id: "pipe-network",
+        title: "Pipe Network Decentralized CDN (Solana)",
+        sponsor: "Pipe Network Labs",
+        category: "AI Web3 Tools",
+        estimatedReward: "$50.00 - $300.00 Token Pool",
+        estimatedGas: "FREE",
+        ngStatus: "NG_FRIENDLY",
+        statusLabel: "🟢 100% NG Friendly & Active",
+        kycRequirement: "No KYC Required",
+        verifiedLink: "https://pipenetwork.com",
+        claimsCount: "15.8k Nigerians",
+        logoUrl: "https://pipenetwork.com/favicon.ico",
+        brandColor: "#00E5FF",
+        summary: "Solana-backed decentralized CDN & media delivery network rewarding point contributors.",
+        whyNgBlocked: "100% open for African nodes and high-bandwidth participants.",
+        workaroundSteps: [
+            "Sign up on pipenetwork.com portal.",
+            "Run lightweight desktop or web node.",
+            "Earn proof-of-delivery points daily."
+        ],
+        offrampPath: "Solana Wallet -> Swap on Raydium -> Convert to NGN"
       },
       {
         id: "story-protocol",
@@ -320,7 +346,8 @@
         kycRequirement: "No KYC Required",
         verifiedLink: "https://storyprotocol.xyz",
         claimsCount: "14.1k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://storyprotocol.xyz/favicon.ico",
+        brandColor: "#7C4DFF",
         summary: "Programmable IP layer protocol. Mint IP assets, license art on testnet ahead of mainnet TGE.",
         whyNgBlocked: "100% open for global participants including Nigeria.",
         workaroundSteps: [
@@ -342,7 +369,8 @@
         kycRequirement: "NIN / BVN Verification",
         verifiedLink: "https://yellowcard.io",
         claimsCount: "62.0k Nigerians",
-        imageUrl: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80",
+        logoUrl: "https://yellowcard.io/favicon.ico",
+        brandColor: "#FFD600",
         summary: "Complete short crypto safety quizzes on Yellow Card Academy to get direct Naira bank payouts.",
         whyNgBlocked: "Built specifically for Nigeria & Africa! Instant local bank payout.",
         workaroundSteps: [
@@ -374,7 +402,7 @@
 
           <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }} onClick={() => setActiveTab('radar')}>
-              {/* Web3NG Custom Logo with Embedded Nigerian Flag */}
+              {/* Web3NG Custom Logo with Embedded 3-Stripe Nigerian Flag */}
               <div style={{ 
                 backgroundColor: 'var(--black)', 
                 color: '#FFF', 
@@ -487,15 +515,25 @@
             {filtered.map(drop => (
               <div key={drop.id} className="card-pop" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  {/* Real Web3 Project Hero Image */}
-                  <img 
-                    src={drop.imageUrl || 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80'} 
-                    alt={drop.title}
-                    className="project-hero-image"
-                    onError={(e) => {
-                      e.target.src = 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80';
-                    }}
-                  />
+                  {/* Official Project Domain Logo Header Showcase */}
+                  <div className="official-project-banner" style={{ background: drop.brandColor || 'var(--purple-light)' }}>
+                    <div className="official-logo-box">
+                      <img 
+                        src={drop.logoUrl || `https://${drop.sponsor.toLowerCase()}/favicon.ico`} 
+                        alt={drop.sponsor}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.parentNode.innerHTML = `<span style="font-weight:900; font-size:1.2rem;">${drop.sponsor.charAt(0)}</span>`;
+                        }}
+                      />
+                    </div>
+                    <div style={{ position: 'absolute', bottom: '8px', right: '8px' }}>
+                      <span className="badge-pop badge-pop-yellow" style={{ fontSize: '0.68rem' }}>
+                        {drop.sponsor}
+                      </span>
+                    </div>
+                  </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', flexWrap: 'wrap', gap: '6px' }}>
                     <span className={`badge-pop ${drop.ngStatus === 'NG_FRIENDLY' ? 'badge-pop-green' : 'badge-pop-yellow'}`}>

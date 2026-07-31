@@ -15,6 +15,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://nodepay.ai",
         "claimsCount": "48.9k Nigerians",
+        "logoUrl": "https://nodepay.ai/favicon.ico",
+        "brandColor": "#00E5FF",
         "summary": "Monetize unused internet bandwidth for AI model training via lightweight Chrome node extension.",
         "whyNgBlocked": "Directly accessible from Nigeria! Works smoothly on MTN, Airtel, Glo, & fiber broadband.",
         "workaroundSteps": [
@@ -37,6 +39,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://oasis.ai",
         "claimsCount": "36.2k Nigerians",
+        "logoUrl": "https://oasis.ai/favicon.ico",
+        "brandColor": "#7C4DFF",
         "summary": "Share idle GPU/CPU and bandwidth for $OAI token points. Popular on X.com for zero-gas passive earnings.",
         "whyNgBlocked": "Zero geo-restrictions for Nigeria! Runs seamlessly in background.",
         "workaroundSteps": [
@@ -58,6 +62,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://bless.network",
         "claimsCount": "24.1k Nigerians",
+        "logoUrl": "https://bless.network/favicon.ico",
+        "brandColor": "#00E676",
         "summary": "Shared compute network running AI inference tasks inside your browser.",
         "whyNgBlocked": "Accessible directly across all Nigerian ISPs.",
         "workaroundSteps": [
@@ -65,28 +71,6 @@ EXTENDED_DROPS_DATA = [
             "Run extension node to farm daily compute points."
         ],
         "offrampPath": "Solana / EVM DEX -> Yellow Card NGN Bank Deposit"
-    },
-    {
-        "id": "paybox-usdc",
-        "title": "MoonPay PayBox USDC Drop",
-        "sponsor": "MoonPay",
-        "category": "USDC/Cash",
-        "estimatedReward": "$5.00 - $25.00 USDC",
-        "estimatedGas": "$0.02 (Base)",
-        "ngStatus": "WORKAROUND_NEEDED",
-        "statusLabel": "🟡 Faucet Drain Alert / Workaround Ready",
-        "kycRequirement": "No KYC Required (AI Wallet Link)",
-        "verifiedLink": "https://paybox.sh",
-        "claimsCount": "14.2k Nigerians",
-        "summary": "Claim free USDC rewards by linking your AI Agent (ChatGPT/Claude) with PayBox wallet.",
-        "whyNgBlocked": "The global faucet drains fast and Cloudflare challenges high-traffic Nigerian IPs.",
-        "workaroundSteps": [
-            "Use custom RPC endpoint (Cloudflare/Alchemy) on Metamask or Phantom.",
-            "Switch Telco DNS: On MTN/Glo, set 1.1.1.1 DNS to bypass Cloudflare captcha loops.",
-            "Ensure your X (Twitter) account is over 30 days old with valid email bound.",
-            "Claim on Base network for ultra-low gas under $0.02."
-        ],
-        "offrampPath": "Claim USDC on Base -> Bridge to YellowCard/Quidax -> Direct NGN Bank Transfer"
     },
     {
         "id": "grass-depin",
@@ -100,6 +84,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC (Email + Solana Wallet)",
         "verifiedLink": "https://app.getgrass.io",
         "claimsCount": "32.5k Nigerians",
+        "logoUrl": "https://app.getgrass.io/favicon.ico",
+        "brandColor": "#00E676",
         "summary": "Earn passive Web3 tokens by sharing unused internet bandwidth via lightweight node.",
         "whyNgBlocked": "Directly accessible from Nigeria without restrictions! Works on MTN/Airtel/Glo.",
         "workaroundSteps": [
@@ -121,6 +107,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://dawninternet.com",
         "claimsCount": "27.4k Nigerians",
+        "logoUrl": "https://dawninternet.com/favicon.ico",
+        "brandColor": "#00E5FF",
         "summary": "Act as a decentralized wireless node by proving bandwidth availability on Solana.",
         "whyNgBlocked": "No IP restrictions for Nigeria! High uptime on mobile data & broadband.",
         "workaroundSteps": [
@@ -142,6 +130,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://gradient.network",
         "claimsCount": "22.1k Nigerians",
+        "logoUrl": "https://gradient.network/favicon.ico",
+        "brandColor": "#FFD600",
         "summary": "Open Intelligence Stack on Solana rewarding Sentry Nodes for AI compute sharing.",
         "whyNgBlocked": "Zero geo-blocking! Works smoothly for all Nigerian network providers.",
         "workaroundSteps": [
@@ -163,6 +153,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://pipenetwork.com",
         "claimsCount": "15.8k Nigerians",
+        "logoUrl": "https://pipenetwork.com/favicon.ico",
+        "brandColor": "#00E5FF",
         "summary": "Solana-backed decentralized CDN & media delivery network rewarding point contributors.",
         "whyNgBlocked": "100% open for African nodes and high-bandwidth participants.",
         "workaroundSteps": [
@@ -184,6 +176,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Needed (Galxe ID)",
         "verifiedLink": "https://movementlabs.xyz",
         "claimsCount": "19.8k Nigerians",
+        "logoUrl": "https://movementlabs.xyz/favicon.ico",
+        "brandColor": "#FFD600",
         "summary": "Modular Move-EVM execution layer. Complete testnet quests, bridge MOVE, and deploy dApps.",
         "whyNgBlocked": "No geo-blocking for Nigerian participants!",
         "workaroundSteps": [
@@ -203,8 +197,10 @@ EXTENDED_DROPS_DATA = [
         "ngStatus": "NG_FRIENDLY",
         "statusLabel": "🟢 100% Free EVM Testnet",
         "kycRequirement": "No KYC Needed",
-        "verifiedLink": "https://artio.faucet.berachain.com",
+        "verifiedLink": "https://berachain.com",
         "claimsCount": "21.0k Nigerians",
+        "logoUrl": "https://berachain.com/favicon.ico",
+        "brandColor": "#FF3D00",
         "summary": "Participate in Proof-of-Liquidity testnet swaps, dApp mints, and daily faucet claims.",
         "whyNgBlocked": "Fully supported! The faucet accepts all EVM wallet addresses.",
         "workaroundSteps": [
@@ -226,6 +222,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "NIN (National ID) Accepted for Galxe Passport",
         "verifiedLink": "https://morphl2.io",
         "claimsCount": "16.2k Nigerians",
+        "logoUrl": "https://morphl2.io/favicon.ico",
+        "brandColor": "#00E676",
         "summary": "Consumer-focused EVM Layer 2. Earn Genesis points by testing bridges & minting NFTs.",
         "whyNgBlocked": "Galxe quests require clear NIN identity verification for high-reward tiers.",
         "workaroundSteps": [
@@ -247,6 +245,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://storyprotocol.xyz",
         "claimsCount": "14.1k Nigerians",
+        "logoUrl": "https://storyprotocol.xyz/favicon.ico",
+        "brandColor": "#7C4DFF",
         "summary": "Programmable IP layer protocol. Mint IP assets, license art on testnet ahead of mainnet TGE.",
         "whyNgBlocked": "100% open for global participants including Nigeria.",
         "workaroundSteps": [
@@ -255,7 +255,7 @@ EXTENDED_DROPS_DATA = [
           "Mint testnet IP licenses on Story ecosystem dApps."
         ],
         "offrampPath": "Mainnet $IP -> Swap on Exchange -> Convert to NGN via Yellow Card"
-    },
+      },
     {
         "id": "unichain-testnet",
         "title": "Unichain L2 Testnet (Uniswap Labs)",
@@ -268,6 +268,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://unichain.org",
         "claimsCount": "18.3k Nigerians",
+        "logoUrl": "https://unichain.org/favicon.ico",
+        "brandColor": "#FF3D00",
         "summary": "Uniswap's official L2 blockchain built on Optimism OP Stack. Execute testnet swaps and liquidity pools.",
         "whyNgBlocked": "Fully open with zero geo-blocks.",
         "workaroundSteps": [
@@ -276,7 +278,7 @@ EXTENDED_DROPS_DATA = [
           "Perform swaps and deploy testnet smart contracts."
         ],
         "offrampPath": "Uniswap Mainnet -> Yellow Card / Quidax NGN Off-ramp"
-    },
+      },
     {
         "id": "humanity-protocol",
         "title": "Humanity Protocol (Palm ID Testnet)",
@@ -289,6 +291,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "Palm Recognition via Mobile Phone",
         "verifiedLink": "https://humanity.org",
         "claimsCount": "29.7k Nigerians",
+        "logoUrl": "https://humanity.org/favicon.ico",
+        "brandColor": "#00E676",
         "summary": "Sybil-resistant proof of humanity protocol. Claim daily testnet $H tokens via smartphone palm scan.",
         "whyNgBlocked": "Open for all global users.",
         "workaroundSteps": [
@@ -297,7 +301,7 @@ EXTENDED_DROPS_DATA = [
           "Claim daily testnet $H rewards."
         ],
         "offrampPath": "Swap on DEX -> Convert to NGN via Yellow Card"
-    },
+      },
     {
         "id": "yellowcard-learn-earn",
         "title": "Yellow Card Academy Micro Learn & Earn",
@@ -310,6 +314,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "NIN / BVN Verification",
         "verifiedLink": "https://yellowcard.io",
         "claimsCount": "62.0k Nigerians",
+        "logoUrl": "https://yellowcard.io/favicon.ico",
+        "brandColor": "#FFD600",
         "summary": "Complete short crypto safety quizzes on Yellow Card Academy to get direct Naira bank payouts.",
         "whyNgBlocked": "Built specifically for Nigeria & Africa! Instant local bank payout.",
         "workaroundSteps": [
@@ -331,6 +337,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "Binance Verified KYC (NIN/BVN)",
         "verifiedLink": "https://binance.com",
         "claimsCount": "75.4k Nigerians",
+        "logoUrl": "https://binance.com/favicon.ico",
+        "brandColor": "#FFD600",
         "summary": "Token launch platform combining Binance Simple Earn with Web3 Wallet dApp tasks.",
         "whyNgBlocked": "Requires using Binance Self-Custody Web3 Wallet tab inside Binance mobile app.",
         "workaroundSteps": [
@@ -352,6 +360,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "Bybit Level 1 KYC (NIN Supported)",
         "verifiedLink": "https://bybit.com",
         "claimsCount": "41.8k Nigerians",
+        "logoUrl": "https://bybit.com/favicon.ico",
+        "brandColor": "#FF3D00",
         "summary": "Interactive Web3 quest hub on Bybit. Complete social tasks and DEX swaps for token drops.",
         "whyNgBlocked": "Fully supports Nigerian identity documents and local P2P!",
         "workaroundSteps": [
@@ -373,6 +383,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://zealy.io",
         "claimsCount": "53.2k Nigerians",
+        "logoUrl": "https://zealy.io/favicon.ico",
+        "brandColor": "#7C4DFF",
         "summary": "Complete community micro-tasks (X retweets, discord chat, quizzes) to earn USDC and project tokens.",
         "whyNgBlocked": "Zero geo-blocking for Nigerian accounts.",
         "workaroundSteps": [
@@ -394,6 +406,8 @@ EXTENDED_DROPS_DATA = [
         "kycRequirement": "No KYC Required",
         "verifiedLink": "https://taskon.xyz",
         "claimsCount": "31.0k Nigerians",
+        "logoUrl": "https://taskon.xyz/favicon.ico",
+        "brandColor": "#00E5FF",
         "summary": "Multi-chain Web3 campaign platform paying instant token drops for completing Web3 micro-quests.",
         "whyNgBlocked": "100% open for Nigeria.",
         "workaroundSteps": [
@@ -413,7 +427,7 @@ def update_json_database():
             "totalDrops": len(EXTENDED_DROPS_DATA),
             "drops": EXTENDED_DROPS_DATA
         }, f, indent=2)
-    print(f"[SUCCESS] Updated dropsData.json with {len(EXTENDED_DROPS_DATA)} verified Nigerian Web3 projects!")
+    print(f"[SUCCESS] Updated dropsData.json without paybox and with official project domain logos!")
 
 if __name__ == "__main__":
     update_json_database()
